@@ -18,12 +18,6 @@ const sendDataBeforeUnload = (e) => {
 
 const setUp = () => {
 	window.addEventListener("beforeunload", sendDataBeforeUnload);
-	// localStorage.setItem("form", $("form").innerHTML);
-	// setInterval(() => {
-	// 	if ($("input:focus")) {
-	// 		localStorage.setItem("form", $("form").innerHTML);
-	// 	}
-	// }, 1000);
 	[...$$("input")].forEach((input) => {
 		input.addEventListener("input", (e) => {
 			e.target.setAttribute("value", e.target.value);
@@ -32,10 +26,6 @@ const setUp = () => {
 };
 
 (() => {
-	// let check = localStorage.getItem("form");
-	// if (check && !check.includes("readonly")) {
-	// 	$("form").innerHTML = check;
-	// } else localStorage.removeItem("form");
 	$("input[name='title-form']").addEventListener("input", (e) => {
 		$(".form-title > h3").innerText = e.target.value;
 		setUp();

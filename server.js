@@ -5,6 +5,7 @@ const passport = require("passport");
 const session = require("express-session");
 const express = require("express");
 const flash = require("connect-flash");
+const MongoStore = require("connect-mongo");
 
 const userInViews = require("./lib/middleware/userInViews");
 const {
@@ -32,10 +33,17 @@ app.use(express.static("public"));
 const hbs = exphbs.create({
 	extname: ".hbs",
 	helpers: {
-		renderForm: function ({ id, form }) {
+		renderCreateForm: function ({ id, form }) {
 			let html = "";
 			html += form;
 			html += `<input type="hidden" name="id" value="${id}">`;
+			return html;
+		},
+		renderForm: function ({ id, form, userId }) {
+			let html = "";
+			html += form;
+			html += `<input type="hidden" name="id" value="${id}">
+			<input type="hidden" name="userId" value="${userId}">`;
 			return html;
 		},
 		renderDashboard: function (forms) {
@@ -69,6 +77,10 @@ const sess = {
 	cookie: { expires: false },
 	resave: false,
 	saveUninitialized: true,
+	store: MongoStore.create({
+		mongoUrl: process.env.MONGODB_URI || "mongodb://localhost:27017/form",
+		collection: "sessions",
+	}),
 };
 
 app.use(cors());

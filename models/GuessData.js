@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const GuessData = new Schema({
 	formId: { type: String, required: true },
-	formName: { type: String, required: true },
+	userId: { type: String, required: true },
 	data: { type: Object, required: true },
 });
 

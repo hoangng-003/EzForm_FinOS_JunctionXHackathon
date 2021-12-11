@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { User, Form } = require("../models");
+const { nanoid } = require("nanoid");
+const { User, Form, GuessData } = require("../models");
 const secured = require("../lib/middleware/secured");
 
 router.get("/createForm/:slug", secured(), (req, res) => {
@@ -50,6 +51,10 @@ router.post("/createForm/:slug", (req, res) => {
 							form: req.body.form,
 						});
 						newForm.save();
+					} else {
+						currentForm.name = req.body.title;
+						currentForm.form = req.body.form;
+						currentForm.save();
 					}
 					res.send({ redirect: `/form/${req.params.slug}?preview=true` });
 				})
