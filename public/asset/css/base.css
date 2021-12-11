@@ -1,0 +1,454 @@
+/*======================================
+ Base CSS: Reset, Root, Animation, Grid
+=======================================*/
+
+/* -------Font------- */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;1,300&display=swap');
+
+/* ------------------
+      Reset CSS
+------------------ */
+*:not(i){
+    font-family: 'Nunito Sans','Raleway', sans-serif;
+    font-weight: 400;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+:before, :after{
+    box-sizing: border-box;
+}
+
+/*-------------------------------------
+ Root variables & Custom CSS variables
+--------------------------------------*/
+:root{
+    --skin-color: #6c63ff;
+    --white-color: #ffffff;
+}
+:root{
+    --bg-black-900: #000000; 
+    --bg-black-100: #dddddd;  
+    --bg-black-50: #eff0f4;
+    --bg-opacity-05: rgba(255, 255, 255, 0.5);
+    --text-black-900: #000000; 
+    --text-black-800: #31344b; 
+    --text-black-700: #555555; 
+    --text-black-600: #666666;  
+    --text-black-300: #bbbbbb;  
+    --outter-shadow: 3px 3px 3px #d0d0d0, -3px -3px 3px #f8f8f8; 
+    --outter-shadow-0: 0px 0px 0px #d0d0d0, 0px 0px 0px #f8f8f8;
+    --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8; 
+    --inner-shadow-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8; 
+    --inner-shadow-1: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #fff;
+}
+:root{
+    --boder-color: #d1d9e6;
+}
+.outer-shadow{
+    box-shadow: var(--outter-shadow);
+}
+.outer-shadow--card{
+    box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;;
+}
+.inner-shadow{
+    box-shadow: var(--inner-shadow);
+}
+.inner-shadow-1{
+    box-shadow: var(--inner-shadow-1);
+}
+.hover-in-shadow{
+    position: relative;
+    z-index: 1;
+}
+.hover-in-shadow:hover{
+    box-shadow: var(--outter-shadow-0);
+}
+.hover-in-shadow::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+.hover-in-shadow:hover::after{
+    box-shadow: var(--inner-shadow);
+}
+.header-shadow{
+    box-shadow:6px 6px 12px #b8b9be, -6px -6px 12px #fff;
+}
+/* GLobal styles */
+html{
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    font-size: 16px;
+    /* line-height: 1.5; */
+    overflow-x: hidden;
+    background-color: var(--bg-black-50);
+}
+body.stop-scrolling{
+    overflow-y: hidden;
+}
+a{
+    text-decoration: none;
+    color: #2d4cc8;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    vertical-align: middle;
+    max-width: 100%;
+}
+button{
+    border: none;
+    -webkit-appearance: none;
+}
+input{
+    margin: 0;
+}
+input.disabled{
+    cursor: default;
+}
+.container{
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.container-l{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.container-m{
+    max-width: 770px;
+    margin: 0 auto;
+}
+.section--endline{
+    margin-top: 80px;
+    width: 100%;
+    height: 1px;
+    background-color: #dadce0;
+}
+.footer--endline{
+    margin-top: 46px;
+    width: 100%;
+    height: 1px;
+    background-color: #dadce0;
+}
+.section--endline--inner{
+    width: 100%;
+    height: 1px;
+    background-color: #dadce0;
+}
+.inner-line{
+    display: inline-block;
+    width: 1px;
+    height: 100%;
+    background-color: #dadce0;
+}
+.form--endline--inner{
+    margin: 24px 15px 15px 15px;
+    width: 100%;
+    height: 1px;
+    background-color: #dadce0;
+}
+/* Button */
+.btn-icon{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+
+    color: var(--text-black-600);
+    margin: 0 4px;
+    transition: all 0.3s ease;
+}
+.btn-icon::after{
+    border-radius: 50%;
+}
+.btn-icon:hover{
+    color: var(--skin-color);
+}
+
+/* Custom Web scrollbar*/
+::-webkit-scrollbar{
+    width: 6px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg-black-50);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--text-black-700);
+    border-radius: 5px;
+}
+
+/*---------------
+    Grid system 
+-----------------*/
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-items-center{
+    align-items: center;
+}
+.align-items-baseline{
+    align-items: baseline;
+}
+.w-10{
+    flex: 0 0 10%;
+    max-width: 10%;
+    padding: 0 15px;
+}
+.w-50{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+.w-70{
+    flex: 0 0 70%;
+    max-width: 70%;
+    padding: 0 15px;
+}
+.w-90{
+    flex: 0 0 90%;
+    max-width: 90%;
+    padding: 0 15px;
+}
+.w-100{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+/*---------------
+    Form system 
+-----------------*/
+.form-control--container{
+    position: relative;
+}
+.form-control.disabled{
+    background-color: var(--white-color);
+    opacity: 0.6;
+    cursor: default;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + 1.2rem + 0.0625rem);
+
+    padding: 0.6rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: text;
+
+    line-height: 1.5;
+    color: #44476a;
+    background-color: var(--white-color);
+    background-clip: padding-box;
+
+    border: 0.0625rem solid #d1d9e6;
+    border-radius: 0.3rem;
+    box-shadow: inset 1px 1px 3px #b8b9be, inset -2px -2px 5px #fff;
+    transition: all .3s ease-in-out;
+}
+.form-control:focus{
+    box-shadow: inset 0px 0px 0px #b8b9be, inset 0px 0px 0px #fff;
+}
+.form-question--inputBox-group{
+    padding: 8px 0;
+}
+.form-question--radio-group{
+    padding: 8px 0;
+}
+.form-question--checkbox-group{
+    padding: 4px 0;
+}
+.form-control--descript{
+    display: inline-block;
+    width: 100%;
+    margin: 0.5rem 0;
+
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: var(--text-black-600);
+
+    border: none;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+}
+.question--title{
+    width: 100%;
+    font-size: 25px;
+    background-color: transparent;
+    padding: 8px 8px 8px 0;
+    border: none;
+}
+.form-check--container{
+    position: relative;
+    display: block;
+    padding: 8px 0;
+}
+.form-check--input{
+    display: inline-block;
+    padding-left: 8px;
+}
+.form-check--descript{
+    border: none;
+    display: inline-block;
+    width: 90%;
+    padding-left: 1rem;
+    line-height: 16px;
+    margin-bottom: 0;
+    color: var(--text-black-600);
+}
+.btn--add-radio-field{
+    background-color: var(--white-color);
+    position: absolute;
+    bottom: -12px;
+    left: 30px;
+    cursor: pointer;
+}
+.btn--add-radio-field:hover::after{
+    font-size: 12px;
+    content: 'Add more item';
+    color: var(--white-color);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    font-family: 'Nunito Sans','Raleway', sans-serif;;
+    position: absolute;
+    top: 20%;
+    right: -92px;
+}
+.btn--remove-asw-field{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+.btn--require-asw-field{
+    position: absolute;
+    top: 100%;
+    transform: translateY(-100%);
+    left: 0px;
+    cursor: pointer;
+    background-color: var(--white-color);
+}
+.btn--require-asw-field.fa-exclamation-circle:hover::after{
+    font-size: 12px;
+    content: 'Remove required for this field';
+    color: var(--white-color);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    font-family: 'Nunito Sans','Raleway', sans-serif;;
+    position: absolute;
+    top: 20%;
+    left: -174px;
+}
+.btn--require-asw-field.fa-calendar-check:hover::after{
+    font-size: 12px;
+    content: 'Add required for this field';
+    color: var(--white-color);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    font-family: 'Nunito Sans','Raleway', sans-serif;;
+    position: absolute;
+    top: 20%;
+    left: -158px;
+}
+/*-------------
+ Custom other 
+ -------------*/
+.section-title{
+    padding: 0 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+.section-title h2{
+    display: inline-block;
+    font-size: 30px;
+    font-weight:700px;
+    color: var(--text-black-800);
+    margin: 0;
+}
+.section-title p{
+    margin: 16px 0 16px 0;
+    font-size:18px;
+    line-height:28px;
+    color: var(--text-black-600);
+}
+/*---------------- 
+    Animation 
+----------------*/
+@keyframes fadeInTop {
+    from {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+@keyframes fadeInLeft {
+    from {
+        transform: translateX(-15px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}

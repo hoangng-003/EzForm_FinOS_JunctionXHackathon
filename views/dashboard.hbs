@@ -1,0 +1,81 @@
+<title>Dashboard</title>
+<!-- Main-Dashboard style CSS -->
+<link rel="stylesheet" href="/asset/css/style_dashboard.css">
+<section class="dashboard-header">
+	<div class="dashboard-header--container container">
+		<div class="row justify-content-between align-items-center">
+			<div class="dashboard-header--info row align-items-center">
+				<div class="logo dashboard-header--item">
+					<a href="/dashboard">
+						<span>EZ</span>form
+					</a>
+				</div>
+			</div>
+			<div class="dashboard-header--userInfo row">
+				<div class="user-avata dashboard-header--item">
+					<img src="/asset/img/user/user-avt-main.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Dashboard header end -->
+
+<!-- Dashboard templates begin -->
+<section class="dashboard-templates">
+	<div class="dashboard-templates--container container-l">
+		<div class="row justify-content-between">
+			<div class="dashboard-templates--nav-text">
+				<p>Start a new form</p>
+			</div>
+			<div class="dashboard-templates--hide-btn">
+				<i class="fas fa-ellipsis-v"></i>
+			</div>
+		</div>
+		<div class="row">
+			<a class="dashboard--create-form">
+				<div class="create-form--box">
+					<i class="far fa-plus-square"></i>
+				</div>
+				<p>Blank form</p>
+			</a>
+			<div class="dashboard-templates--items">
+				<div class="template-item">
+					<img src="/asset/img/Templates/template-1.jpg" alt="">
+					<p>Template 1</p>
+				</div>
+				<div class="template-item">
+					<img src="/asset/img/Templates/template-2.jpg" alt="">
+					<p>Template 2</p>
+				</div>
+				<div class="template-item">
+					<img src="/asset/img/Templates/template-3.jpg" alt="">
+					<p>Template 3</p>
+				</div>
+				<div class="template-item">
+					<img src="/asset/img/Templates/template-4.jpg" alt="">
+					<p>Template 4</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Dashboard templates end -->
+
+<!-- Dashboard user's form(s) begin -->
+<section class="dashboard-userForm">
+	<div class="dashboard-userForm--container container-l">
+		<div class="row">
+			<div class="dashboard-userForm--text">
+				<h4>Recent forms</h4>
+			</div>
+		</div>
+		<div class="row">
+			{{#renderDashboard forms}}
+			{{/renderDashboard}}
+		</div>
+	</div>
+</section>
+
+<!-- Script file -->
+<script src="/asset/js/dashboard.js"></script>

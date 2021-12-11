@@ -1,0 +1,533 @@
+/* --------------
+    Form-Header
+--------------- */
+.form-header{
+    position: fixed;
+    min-height: 40px;
+    background-color: var(--white-color);
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+.form-header--container{
+    padding: 8px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+}
+.form-header .form-header--item{
+    display: inline-block;
+}
+.form-header .logo{
+    padding: 8px 24px;
+    border-radius: 4px;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    --webkit-transition: all 0.3s ease;
+}
+.form-header .logo:hover{
+    border: 2px solid var(--boder-color);
+}
+.form-header .logo a{
+    color: var(--text-black-700);
+    font-size: 28px;
+    font-weight: 500;
+}
+.form-header .logo a span{
+    margin-right: 3px;
+} 
+.form-header .form-title{
+    position: relative;
+    margin-left: 12px;
+}
+.form-header .form-title::before{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+
+    height: 4px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: var(--boder-color);
+}
+.form-header .form-title h3{
+    font-size: 18px;
+    color: var(--text-black-600);
+}
+.form-header .btn-preview-form{
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+
+    margin-right: 8px;
+    border-radius: 50%;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+.form-header .btn-preview-form:hover{
+    border: 1px solid var(--boder-color);
+}
+.form-header .btn-preview-form:hover::before{
+    font-size: 12px;
+    content: 'Preview';
+    color: var(--white-color);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 116%;
+    left: -5px;
+}
+.form-header .btn-preview-form::after{
+    border-radius: 50%;
+}
+.form-header .btn-preview-form i{
+    font-size: 20px;
+    color: var(--text-black-700);
+}
+.form-header .btn-send{
+    padding: 8px 24px;
+    border-radius: 4px;
+    border: 1px solid var(--boder-color);
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    --webkit-transition: all 0.3s ease;
+}
+.form-header .btn-send a{
+    font-size: 16px;
+    color: var(--text-black-700);
+}
+.form-header .btn-send::after{
+    border-radius: 4px;
+}
+.form-header .user-avata{
+    width: 40px;
+    height: 40px;
+    margin: 0 5px 0 20px;
+
+    border-radius: 50%;
+    border: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.form-header .user-avata:hover{
+    cursor: pointer;
+    border: 3px solid var(--boder-color);
+}
+.form-header .user-avata img{
+    width: 100%;
+    border-radius: 50%;
+}
+.form-header .form-content--views{
+    margin-top: 8px;
+}
+.form-header .view--options .view--options-item{
+    position: relative;
+    display: inline-block;
+    padding: 4px 16px;
+
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.form-header .view--options .view--options-item.active{
+    border-bottom: 3px solid var(--boder-color);
+}
+.form-header .view--options .view--options-item span{
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-black-600);
+}
+.form-header .view--options .view--question{
+    margin-right: 4px;
+}
+.form-header .view--options .view--response{
+    margin-left: 4px;
+}
+/* ---------------------
+    Form-body Questions
+----------------------- */
+.form-body{
+    padding-top: 124px;
+    min-height:calc(100vh - 124px);
+}
+.form-body .form-body--questions{
+    position: relative;
+    padding: 0 10px;
+    transition: all 0.3s ease;
+}
+.form-body .form-body--questions.hide{
+    display: none;
+    visibility: hidden;
+}
+.form-body .form-body--questions.show{
+    display: block;
+    visibility: visible;
+}
+/* Form-body-navigation begin */
+.form-body .form-body--questions .form-question--nav{
+    position: absolute;
+    right: -50px;
+    top: 20%;
+
+    text-align: center;
+    min-height: 40px;
+    width: 40px;
+
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: var(--bg-black-50);
+}
+.form-body .form-body--questions .form-question--nav i{
+    line-height: 40px;
+    font-size: 16px;
+    color: var(--text-black-700);
+}
+.form-body .form-body--questions .question-nav-item{
+    display: block;
+}
+.add-personal-info{
+    position: relative;
+}
+.add-personal-info:hover::after{
+    font-size: 12px;
+    content: 'Pesonal info';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 20%;
+    right: -80px;
+}
+.add-title{
+    position: relative;
+}
+.add-title:hover::after{
+    font-size: 12px;
+    content: 'Title';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 24%;
+    right: -38px;
+}
+.add-input{
+    position: relative;
+}
+.add-input:hover::after{
+    font-size: 12px;
+    content: 'Input';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 24%;
+    right: -42px;
+}
+.add-radio{
+    position: relative;
+}
+.add-radio:hover::after{
+    font-size: 12px;
+    content: 'Radio with Description';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 24%;
+    right: -134px;
+}
+.add-checkbox{
+    position: relative;
+}
+.add-checkbox:hover::after{
+    font-size: 12px;
+    content: 'Checkbox with Description';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 24%;
+    right: -158px;
+}
+.add-dropDown{
+    position: relative;
+}
+.add-dropDown:hover::after{
+    font-size: 12px;
+    content: 'Drop down';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 26%;
+    right: -72px;
+}
+.add-description{
+    position: relative;
+}
+.add-description:hover::after{
+    font-size: 12px;
+    content: 'Add description';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 23%;
+    right: -98px;
+}
+/* Form-body-navigation end */
+.form-body .form-question--container{
+    min-height: calc(100vh - 120px);
+    background-color: var(--bg-black-50);
+}
+.form-body .form-question--title{
+    background-color: var(--white-color);
+    padding: 15px 24px;
+    border-radius: 5px;
+    border-top: 8px solid #3f51b5;
+    border-left: 6px solid #4285f4;
+}
+.form-body .form--title{
+    border: var(--boder-color);
+    display: block;
+    min-height: 50px;
+    width: 100%;
+
+    font-size: 34px;
+    resize: none;
+    background-color: transparent;
+    margin-bottom: 4px;
+}
+.form-body .form--sub-title{
+    border: none;
+    display: block;
+    width: 100%;
+
+    margin-top: 4px;
+    resize: none;
+    background-color: transparent;
+    padding: 8px 4px;
+}
+.form-body .form-question--body{
+    margin-top: 12px;
+    margin-bottom: 64px;
+    background-color: var(--white-color);
+    padding: 15px 0px;
+    border-radius: 5px;
+    border-left: 6px solid #4285f4;
+}
+
+/* ---------------------
+  Send Form popup begin
+----------------------- */
+.form-sending-popup{
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+.form-sending-popup.active {
+    z-index: 109;
+    opacity: 1;
+    visibility: visible;
+}
+.form-sending-popup .sending-popup--container{
+    background-color: var(--white-color);
+    padding: 24px 16px;
+    margin: 0 15px 0 15px;
+    width: 558px;
+
+    transform: translateY(-50%);
+    border-radius: 10px;
+}
+.sending-popup--header{
+    margin-bottom: 12px;
+}
+.sending-popup--header .sending-popup--text h3{
+    font-size: 22px;
+    color: var(--text-black-700);
+    letter-spacing: 0.1px;
+    line-height: 40px;
+}
+.sending-popup--header .sending-popup--close-btn{
+    width: 40px;
+    height: 40px;
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.sending-popup--body{
+    margin: 16px 0;
+}
+.sending-popup--body h4{
+    line-height: 28px;
+    color: var(--text-black-600);
+    margin-bottom: 12px;
+}
+.sending-popup--body input{
+    width: 100%;
+    font-size: 14px;
+    border: none;
+    border-bottom: 1px solid var(--boder-color);
+    padding: 3px 0;
+}
+.sending-popup--footer{
+    margin-top: 12px;
+}
+.sending-popup--footer .sending-popup--copyLink{
+    padding: 5px 20px;
+    border: 1px solid var(--boder-color);
+    border-radius: 4px;
+    background-color: var(--white-color);
+
+    font-size: 14px;
+    color: var(--text-black-600);
+    letter-spacing: 0.25px;
+    font-weight: bold;
+
+    float: right;
+    right: 0;
+    cursor: pointer;
+}
+/* ---------------------
+    Form-body Qustion
+----------------------- */
+.form-question--titleBox-group{
+    margin: 6px 0;
+}
+.form-question--descriptBox-group{
+    margin: 4px 0;
+}
+.form-question--inputBox-group{
+    margin: 6px 0;
+}
+.form-question--radio-group{
+    margin: 6px 0;
+}
+.form-question--checkbox-group{
+    margin: 0;
+}
+.btn--require-radioBox{
+    position: absolute;
+    top: 110%;
+    transform: translateY(-50%);
+    left: 0px;
+    cursor: pointer;
+}
+/* ---------------------
+    Form-body Responses
+----------------------- */
+.form-body .form-body-responses{ 
+    border: 1px solid var(--boder-color);
+    padding: 15px 24px;
+    border-radius: 5px;
+    background-color: var(--white-color);
+    transition: all 0.3s ease;
+}
+.form-body .form-body-responses.hide{
+    display: none;
+    visibility: hidden;
+}
+.form-body .form-body-responses.show{
+    display: block;
+    visibility: visible;
+}
+.form-body-responses .report-item{
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+    padding: 15px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+.form-body-responses .report-item-inner{
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+.form-body-responses .report-item-inner p{
+    font-size: 16px;
+    margin: 10px 0 0;
+    color: var(--text-black-600);
+    text-transform: capitalize;
+}
+.form-body-responses .report-item-img img{
+    border-radius: 5px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.form-body-responses .report-item-inner:hover .report-item-img img{
+    transform: translateY(-25px);
+}
+.form-body-responses .report-item-img{
+    position: relative;
+}
+.form-body-responses .report-item-img .view-report{
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--skin-color);
+    text-transform: capitalize;
+    
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transform: translateY(-5px);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.form-body-responses .report-item-inner:hover .view-report{
+    z-index: 0;
+    opacity: 1;
+    transform: translateY(0px);
+}

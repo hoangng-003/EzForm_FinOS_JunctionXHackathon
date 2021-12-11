@@ -1,0 +1,514 @@
+<title>EZ form</title>
+
+<!-- main css -->
+<link rel="stylesheet" href="./asset/css/base.css">
+<link rel="stylesheet" href="./asset/css/style.css">
+<link rel="stylesheet" href="./asset/css/responsive.css">
+<!-- Font-icon -->
+<link rel="stylesheet" href="./asset/css/font-awesome.css">
+<div class="header main-header header-shadow">
+	<div class="header-container">
+		<div class="row justify-content-between align-items-center">
+			<div class="navigation row">
+				<label for="nav-mobile-input" class="nav__bars-btn l-0">
+					<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+						<path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+					</svg>
+				</label>
+
+				<input type="checkbox" class="nav__input l-0" id="nav-mobile-input">
+
+				<label for="nav-mobile-input" class="nav-overlay"></label>
+				<div class="logo">
+					<a href="index.html">
+						<span>EZ</span>form
+					</a>
+				</div>
+				<div class="navigation nav-mobile row align-items-center">
+					<div class="logo l-0">
+						<a href="index.html">
+							<span>EZ</span>form
+						</a>
+					</div>
+					<a class="nav--item hover-in-shadow" href="#overview">Overview</a>
+					<a class="nav--item hover-in-shadow" href="#features">Features</a>
+					<a class="nav--item hover-in-shadow" href="#templates">Templates</a>
+					<a class="js-about-us nav--item hover-in-shadow" href="#about-us-section">About Us</a>
+
+					<div class="register--btn hover-in-shadow l-0 mobile-btn">
+						{{#if user}}
+						<a href="/signout">Sign-out</a>
+						{{else}}
+						<a href="/signin">Sign-in</a>
+						{{/if}}
+					</div>
+					<div class="onlineForm outer-shadow hover-in-shadow l-0 mobile-btn">
+						<a href="/dashboard">Go to Form</a>
+					</div>
+
+				</div>
+			</div>
+			<div class="register row">
+				<div class="register--btn hover-in-shadow">
+					{{#if user}}
+					<a href="/signout">Sign-out</a>
+					{{else}}
+					<a href="/signin">Sign-in</a>
+					{{/if}}
+				</div>
+				<div class="onlineForm outer-shadow hover-in-shadow">
+					<a href="/dashboard">Go to Form</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Header end -->
+
+<!-- About Us container begin -->
+<section class="about-us-section section" id="about-us-section">
+	<!-- About us header -->
+	<div class="header abt-header header-shadow">
+		<div class="abt-header--container container">
+			<div class="row justify-content-between align-items-center">
+				<div class="navigation row">
+					<label for="abt-nav-mobile-input" class="abt-nav__bars-btn m-0">
+						<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+							<path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
+						</svg>
+					</label>
+
+					<input type="checkbox" class="abt-nav__input m-0" id="abt-nav-mobile-input">
+
+					<label for="abt-nav-mobile-input" class="abt-nav-overlay"></label>
+
+					<div class="abt-logo">
+						<span>EZ</span>form
+					</div>
+					<div class="abt-navigation abt-nav-mobile row align-items-center">
+						<div class="abt-logo m-0">
+							<span>EZ</span>form
+						</div>
+						<a class="abt-nav--item hover-in-shadow" href="#abt-info">Overview</a>
+						<a class="abt-nav--item hover-in-shadow" href="#abt-works">Project Info</a>
+						<a class="abt-nav--item hover-in-shadow" href="#abt-teams">Our Team</a>
+					</div>
+				</div>
+				<div class="close-aboutContainer outer-shadow hover-in-shadow" href="">&times;</div>
+			</div>
+		</div>
+	</div>
+	<!-- About us info -->
+	<div class="abt-info" id="abt-info">
+		<div class="abt-info--container container">
+			<div class="abt-main-info">
+				<h1>We are EZform</h1>
+				<p>EZform is a online platform helper you create
+					and share online forms and surveys,<br> and analyze
+					responses in real-time.
+				</p>
+				<a class="outer-shadow hover-in-shadow" href="#abt-works"><i class="fas fa-book-reader"></i> Our works</a>
+			</div>
+		</div>
+		<div class="abt-vision">
+			<div class="abt-vision--container container  outer-shadow">
+				<div class="row">
+					<div class="abt-vision-card">
+						<div class="vision-card--icon inner-shadow">
+							<i class="far fa-eye"></i>
+						</div>
+						<h2>Audience</h2>
+						<p>At EZform, we use human, brand, and cultural insights to
+							unlock strategic business opportunities for clients.
+						</p>
+					</div>
+					<div class="abt-vision-card">
+						<div class="vision-card--icon inner-shadow">
+							<i class="fas fa-medal"></i>
+						</div>
+						<h2>Branding</h2>
+						<p>At EZform, we use human, brand, and cultural insights
+							to unlock strategic business opportunities for clients.
+						</p>
+					</div>
+					<div class="abt-vision-card">
+						<div class="vision-card--icon inner-shadow">
+							<i class="fas fa-puzzle-piece"></i>
+						</div>
+						<h2>Production</h2>
+						<p>Today, truly creative sells. Get innovative ideas and
+							polished finish pieces from our creative agency.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- About us works -->
+	<div class="abt-works" id="abt-works">
+		<div class="abt-works--container container">
+			<div class="row">
+				<div class="abt-work--img">
+					<div class="abt-work--imgBox outer-shadow">
+						<img src="./asset/img/about-us/image-1.jpg" alt="">
+					</div>
+				</div>
+				<div class="abt-work--text">
+					<div class="abt-work--text-inner">
+						<h2>Design with us, Develop Anything</h2>
+						<p>Themesberg is an experienced and passionate group of designers, developers,
+							project managers, writers and artists. Every client we work with becomes
+							a part of the team. Together we face the challenges and celebrate the victories.
+						</p>
+						<p>Our small team is active in the creative community, endlessly interested
+							in what’s next, and generally pleasant to be around.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section--endline--inner container"></div>
+	<!-- About us teams -->
+	<div class="abt-teams" id="abt-teams">
+		<div class="abt-teams--container container">
+			<div class="row">
+				<div class="section-title">
+					<h3 class="teams--title">Our Team</h3>
+				</div>
+			</div>
+			<div class="row justify-content-center justify-content-between">
+				<!-- Dev-1 infomation -->
+				<div class="team-card">
+					<div class="team-card--inner outer-shadow--card">
+						<div class="profile-image--inner inner-shadow">
+							<img class="outer-shadow" src="./asset/img/team/profile-picture-1.jpg" alt="">
+						</div>
+						<div class="profile-info">
+							<h3>Truong Tan Thanh</h3>
+							<span>UX-UI designer</span>
+							<div class="team-social-profile">
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-linkedin-in"></i></a>
+								<a href=""><i class="fab fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Dev-2 infomation -->
+				<div class="team-card">
+					<div class="team-card--inner outer-shadow--card">
+						<div class="profile-image--inner inner-shadow">
+							<img class="outer-shadow" src="./asset/img/team/profile-picture-2.jpg" alt="">
+						</div>
+						<div class="profile-info">
+							<h3>Truong Tan Thanh</h3>
+							<span>UX-UI designer</span>
+							<div class="team-social-profile">
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-linkedin-in"></i></a>
+								<a href=""><i class="fab fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Dev-3 infomation -->
+				<div class="team-card">
+					<div class="team-card--inner outer-shadow--card">
+						<div class="profile-image--inner inner-shadow">
+							<img class="outer-shadow" src="./asset/img/team/profile-picture-3.jpg" alt="">
+						</div>
+						<div class="profile-info">
+							<h3>Truong Tan Thanh</h3>
+							<span>UX-UI designer</span>
+							<div class="team-social-profile">
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-linkedin-in"></i></a>
+								<a href=""><i class="fab fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Dev-4 infomation -->
+				<div class="team-card">
+					<div class="team-card--inner outer-shadow--card">
+						<div class="profile-image--inner inner-shadow">
+							<img class="outer-shadow" src="./asset/img/team/profile-picture-4.jpg" alt="">
+						</div>
+						<div class="profile-info">
+							<h3>Truong Tan Thanh</h3>
+							<span>UX-UI designer</span>
+							<div class="team-social-profile">
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-linkedin-in"></i></a>
+								<a href=""><i class="fab fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Dev-5 infomation -->
+				<div class="team-card">
+					<div class="team-card--inner outer-shadow--card">
+						<div class="profile-image--inner inner-shadow">
+							<img class="outer-shadow" src="./asset/img/team/profile-picture-5.jpg" alt="">
+						</div>
+						<div class="profile-info">
+							<h3>Truong Tan Thanh</h3>
+							<span>UX-UI designer</span>
+							<div class="team-social-profile">
+								<a href=""><i class="fab fa-facebook-f"></i></a>
+								<a href=""><i class="fab fa-linkedin-in"></i></a>
+								<a href=""><i class="fab fa-github"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section--endline--inner container"></div>
+	<!-- About us footer -->
+	<div class="abt-footer">
+		<div class="footer-body container">
+			<div class="row">
+				<div class="socials-links">
+					<p>
+						<a href="">EZform </a>
+						is a online platform helper you create<br> and share online forms and surveys, and analyze <br> responses in real-time.
+					</p>
+					<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-facebook"></i></a>
+					<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-github"></i></a>
+					<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-youtube"></i></a>
+				</div>
+				<div class="contact-info">
+					<h3>Keep In Touch!</h3>
+					<div class="row">
+						<div class="info--item">
+							<div class="outer-shadow"><i class="fas fa-map-marker-alt"></i></div>
+							<h2>Visit us</h2>
+							<span>144 Xuan Thuy,<br> Cau Giay, Hanoi</span>
+						</div>
+						<div class="info--item">
+							<div class="outer-shadow"><i class="fas fa-phone-alt"></i></i></div>
+							<h2>Call</h2>
+							<span>(+84) 0123.456.789<br> Mon - Fri, 8am - 4pm</span>
+						</div>
+						<div class="info--item">
+							<div class="outer-shadow"><i class="far fa-paper-plane"></i></i></div>
+							<h2>Email</h2>
+							<span>ezform@gmail.com</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer--endline"></div>
+	</div>
+</section>
+<!-- About Us container end -->
+
+<!-- Overview Section begin -->
+<section class="overview-section section" id="overview">
+	<div class="overview-section--container container">
+		<div class="row">
+			<div class="overview--text">
+				<h2>Get insights quickly, with EZ Form !</h2>
+				<p>Easily create and share online forms and surveys, and analyze responses in real-time.</p>
+				<a class="onlineForm outer-shadow hover-in-shadow" href="/dashboard">Go to Form</a>
+				{{#if user}}
+				{{else}}
+				<p>Want to use EZ Form? <a href="/signin">Login or Sign up here</a></p>
+				{{/if}}
+				<div class="overview--img">
+					<img src="./asset/img/illustrator/reading-side.svg" alt="">
+				</div>
+			</div>
+			<div class="overview--intro-vid">
+				<div class="intro-vid--box inner-shadow">
+					<img src="./asset/img/overview-img.png" class="outer-shadow" alt="Profile Image">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section--endline"></div>
+</section>
+<!-- Overview Section end -->
+
+<!-- Features Section begin -->
+<section class="features-section section" id="features">
+	<div class="features-section--container container">
+		<div class="row feature-item">
+			<div class="feature-img feature-1--img">
+				<div class="feature-img--box inner-shadow">
+					<img src="./asset/img/feature-1.jpg" class="outer-shadow" alt="Profile Image">
+				</div>
+			</div>
+			<div class="feature-text feature-1--text">
+				<div class="feature-text--inner">
+					<h2>Create an online form as easily as creating a document</h2>
+					<p>Select from multiple question types, drag-and-drop to reorder questions, and customize values as easily as pasting a list.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row feature-item">
+			<div class="feature-img feature-2--img">
+				<div class="feature-img--box inner-shadow">
+					<img src="./asset/img/feature-2.jpg" class="outer-shadow" alt="Profile Image">
+				</div>
+			</div>
+			<div class="feature-text feature-2--text">
+				<div class="feature-text--inner">
+					<h2>Send polished surveys and forms</h2>
+					<p>Customize colors, images, and fonts to adjust the look and feel or reflect your organization’s branding. And add custom logic that shows questions based on answers, for a more seamless experience.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row feature-item">
+			<div class="feature-img feature-3--img">
+				<div class="feature-img--box inner-shadow">
+					<img src="./asset/img/feature-3.jpg" class="outer-shadow" alt="Profile Image">
+				</div>
+			</div>
+			<div class="feature-text feature-3--text">
+				<div class="feature-text--inner">
+					<h2>Analyze responses with automatic summaries</h2>
+					<p>See charts with response data update in real-time. Or open the raw data with Google Sheets for deeper analysis or automation.</p>
+				</div>
+			</div>
+		</div>
+		<div class="row feature-item">
+			<div class="feature-img feature-4--img">
+				<div class="feature-img--box inner-shadow">
+					<img src="./asset/img/feature-4.jpg" class="outer-shadow" alt="Profile Image">
+				</div>
+			</div>
+			<div class="feature-text feature-4--text">
+				<div class="feature-text--inner">
+					<h2>Create and respond to surveys from anywhere</h2>
+					<p>Access, create, and edit forms on-the-go, from screens big and small. Others can respond to your survey from wherever they are—from any mobile device, tablet, or computer.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="section--endline"></div>
+</section>
+<!-- Features Section end -->
+
+<!-- Templates Section begin -->
+<section class="templates-section section" id="templates">
+	<div class="templates-section--container container">
+		<div class="overview-section--container container">
+			<div class="row">
+				<div class="section-title">
+					<h2 data-heading="">Get a head start with templates</h2>
+					<p>Choose from a variety of surveys, questionnaires, and other professionally-<br>designed templates to kick things off quickly.</p>
+				</div>
+			</div>
+			<div class="row">
+
+				<div class="tempalate-item">
+					<div class="template-item--inner">
+						<h3>Orders</h3>
+						<div class="tempalate-item--img-box">
+							<img src="./asset/img/Templates/template-1.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="tempalate-item">
+					<div class="template-item--inner">
+						<h3>Feedback</h3>
+						<div class="tempalate-item--img-box">
+							<img src="./asset/img/Templates/template-2.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="tempalate-item">
+					<div class="template-item--inner">
+						<h3>Assessment</h3>
+						<div class="tempalate-item--img-box">
+							<img src="./asset/img/Templates/template-4.jpg" alt="">
+						</div>
+					</div>
+				</div>
+				<div class="tempalate-item">
+					<div class="template-item--inner">
+						<h3>Assessment</h3>
+						<div class="tempalate-item--img-box">
+							<img src="./asset/img/Templates/template-3.jpg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section--endline"></div>
+</section>
+<!-- Templates Section end -->
+
+<!-- Footer begin -->
+<section class="footer-section container">
+	<div class="footer-head container">
+		<div class="row">
+			<div class="footer-text">
+				<div class="footer-text--inner">
+					<h2>Ready to get started?</h2>
+					<a class="onlineForm outer-shadow hover-in-shadow" href="/dashboard">Go to Form</a>
+					<span>or</span>
+					{{#if user}}
+					<a href="/signout">Sign-out</a>
+					{{else}}
+					<a href="/signin">Sign-in</a>
+					{{/if}}
+				</div>
+			</div>
+			<div class="footer-img--box">
+				<div class="footer-img--inner">
+					<img src="./asset/img/footer/undraw_startup_life.svg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section--endline--inner"></div>
+	<div class="footer-body container">
+		<div class="row">
+			<div class="socials-links">
+				<p>
+					<a href="">EZform </a>
+					is a online platform helper you create<br> and share online forms and surveys, and analyze <br> responses in real-time.
+				</p>
+				<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-facebook"></i></a>
+				<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-github"></i></a>
+				<a class="btn-icon outer-shadow hover-in-shadow" href=""><i class="fab fa-youtube"></i></a>
+			</div>
+			<div class="contact-info">
+				<h3>Keep In Touch!</h3>
+				<div class="row">
+					<div class="info--item">
+						<div class="outer-shadow"><i class="fas fa-map-marker-alt"></i></div>
+						<h2>Visit us</h2>
+						<span>144 Xuan Thuy,<br> Cau Giay, Hanoi</span>
+					</div>
+					<div class="info--item">
+						<div class="outer-shadow"><i class="fas fa-phone-alt"></i></i></div>
+						<h2>Call</h2>
+						<span>(+84) 0123.456.789<br> Mon - Fri, 8am - 4pm</span>
+					</div>
+					<div class="info--item">
+						<div class="outer-shadow"><i class="far fa-paper-plane"></i></i></div>
+						<h2>Email</h2>
+						<span>ezform@gmail.com</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer--endline"></div>
+</section>
+<!-- Footer end -->
+
+<!-- Scripts file -->
+<script src="./asset/js/main.js"></script>
+</body>
+
+</html>
