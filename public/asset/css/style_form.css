@@ -112,6 +112,7 @@
     width: 40px;
     height: 40px;
     margin: 0 5px 0 20px;
+    position: relative;
 
     border-radius: 50%;
     border: 3px solid transparent;
@@ -120,6 +121,22 @@
 .form-header .user-avata:hover{
     cursor: pointer;
     border: 3px solid var(--boder-color);
+}
+.form-header .user-avata:hover::before{
+    font-size: 14px;
+    content: 'Log-out';
+    color: var(--bg-black-50);
+    text-align: center;
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 115%;
+    right: -19px;
+    left: -19px;
 }
 .form-header .user-avata img{
     width: 100%;

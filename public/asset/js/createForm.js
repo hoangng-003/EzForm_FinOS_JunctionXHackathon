@@ -830,3 +830,26 @@ const formQuestionBody = $("#form-question--body");
 	};
 	btnSend.addEventListener("click", sendOfficialData);
 };
+
+(() => {
+	[...$$(".report-item")].forEach((item) => {
+		item.addEventListener("click", (e) => {
+			const uuid = e.currentTarget.querySelector("input[name='uuid']").value;
+			fetch(window.location.href, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				mode: "cors",
+				keepalive: true,
+				body: JSON.stringify({
+					action: "show",
+					uuid,
+				}),
+			})
+				.then((res) => res.json())
+				.then((data) => (window.location.href = data.redirect))
+				.catch((err) => console.log(err));
+		});
+	});
+})();

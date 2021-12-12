@@ -1,0 +1,17 @@
+<title>Form</title>
+<!-- Main-Form style CSS -->
+<link rel="stylesheet" href="/asset/css/style_form.css">
+<link rel="stylesheet" href="/asset/css/reponsive_form.css">
+<!-- Form header begin -->
+<section class="form-body container">
+	<div class="form-body--questions container-m">
+		<div class="form-question--container">
+			<form method="POST">
+				{{#renderGuess guessData}}
+				{{/renderGuess}}
+			</form>
+		</div>
+	</div>
+</section>
+<!-- Send Form popup end -->
+<script src="/asset/js/guess_form.js"></script>

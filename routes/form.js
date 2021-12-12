@@ -6,9 +6,16 @@ const { GuessData, Form, TempData } = require("../models");
 router.get("/form/:slug", (req, res) => {
 	if (req.query.preview) {
 		Form.findOne({ id: req.params.slug })
-			.then((form) => {
-				form = form.toObject();
-				res.render("form", { form, preview: true });
+			.then((currentForm) => {
+				currentForm = currentForm.toObject();
+				res.render("form", {
+					userForm: {
+						form: currentForm.form,
+						preview: true,
+						userId: "",
+						id: currentForm.id,
+					},
+				});
 			})
 			.catch((err) => console.log(err));
 	} else {

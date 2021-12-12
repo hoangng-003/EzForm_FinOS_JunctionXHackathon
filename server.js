@@ -81,6 +81,11 @@ const hbs = exphbs.create({
 			});
 			return html;
 		},
+		renderGuess: function ({ data }) {
+			let html = "";
+			html += data;
+			return html;
+		},
 	},
 });
 

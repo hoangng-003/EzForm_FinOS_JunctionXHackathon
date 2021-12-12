@@ -97,6 +97,11 @@ router.post("/createForm/:slug", (req, res) => {
 				}
 			});
 		}
+		case "show": {
+			GuessData.findOne({ userId: req.body.uuid }).then((guessData) => {
+				res.send({ redirect: `/dashboard/guess/${guessData.userId}` });
+			});
+		}
 	}
 });
 

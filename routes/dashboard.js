@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const secured = require("../lib/middleware/secured");
 const { nanoid } = require("nanoid");
-const { User, Form } = require("../models");
+const { User, Form, GuessData } = require("../models");
 const fs = require("fs");
 
 const customerInformation = fs.readFileSync(
@@ -17,7 +17,16 @@ const propertyDeclaration = fs.readFileSync(
 );
 
 router.get("/dashboard", secured(), (req, res) => {
-	res.render("dashboard", { forms: req.user.forms });
+	User.findOne({ email: req.user.email }).then((user) => {
+		res.render("dashboard", { forms: user.forms });
+	});
+});
+
+router.get("/dashboard/guess/:slug", secured(), (req, res) => {
+	GuessData.findOne({ userId: req.params.slug }).then((guessData) => {
+		guessData = guessData.toObject();
+		res.render("showGuessData", { guessData });
+	});
 });
 
 router.post("/dashboard", secured(), (req, res) => {
@@ -83,7 +92,6 @@ router.post("/dashboard", secured(), (req, res) => {
 			break;
 		}
 		case "update": {
-			console.log("hi");
 			User.findOne({ email: req.user.email }).then((user) => {
 				req.user.forms = user.forms;
 			});

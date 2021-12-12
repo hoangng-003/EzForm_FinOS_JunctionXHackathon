@@ -2,9 +2,6 @@ const express = require("express");
 const router = express.Router();
 const passport = require("passport");
 const dotenv = require("dotenv");
-const util = require("util");
-const url = require("url");
-const querystring = require("querystring");
 
 dotenv.config();
 
@@ -50,22 +47,9 @@ router.get("/callback", function (req, res, next) {
 
 // Perform session logout and redirect to homepage
 router.get("/signout", (req, res) => {
-	req.session.destroy();
 	req.logout();
-	let returnTo = req.protocol + "://" + req.hostname;
-	let port = req.socket.localPort;
-	if (port !== undefined && port !== 80 && port !== 443) {
-		returnTo += ":" + port;
-	}
-	const logoutURL = new url.URL(
-		util.format("https://%s/v2/logout", process.env.AUTH0_DOMAIN)
-	);
-	const searchString = querystring.stringify({
-		client_id: process.env.AUTH0_CLIENT_ID,
-		returnTo: returnTo,
-	});
-	logoutURL.search = searchString;
-	res.redirect(logoutURL);
+	req.session.destroy();
+	res.redirect("/");
 });
 
 module.exports = router;

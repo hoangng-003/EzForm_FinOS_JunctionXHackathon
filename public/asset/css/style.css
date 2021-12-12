@@ -567,6 +567,7 @@
 }
 .templates-section .tempalate-item .tempalate-item--img-box img{
     max-width: 100%;
+    border-radius: 8px;
 }
 /*-------------
     Footer
