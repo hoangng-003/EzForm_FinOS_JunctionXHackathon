@@ -50,6 +50,7 @@ router.get("/callback", function (req, res, next) {
 
 // Perform session logout and redirect to homepage
 router.get("/signout", (req, res) => {
+	req.session.destroy();
 	req.logout();
 	let returnTo = req.protocol + "://" + req.hostname;
 	let port = req.socket.localPort;

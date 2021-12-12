@@ -57,3 +57,25 @@ $(".dashboard--create-form").addEventListener("click", () => {
 	};
 	reload();
 })();
+
+(() => {
+	[...$$(".template-item")].forEach((item) => {
+		item.addEventListener("click", (e) => {
+			const templateId = e.currentTarget.id;
+			fetch("/dashboard", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					action: "template",
+					templateId,
+				}),
+				mode: "cors",
+			})
+				.then((res) => res.json())
+				.then((data) => (window.location.href = data.redirect))
+				.catch((err) => console.log(err));
+		});
+	});
+})();

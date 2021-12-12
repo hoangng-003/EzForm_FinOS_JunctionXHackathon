@@ -7,6 +7,7 @@ const sendDataBeforeUnload = (e) => {
 	const formTitle = $("input[name='title-form']").value;
 	fetch(window.location.href, {
 		keepalive: true,
+		mode: "cors",
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -18,6 +19,15 @@ const sendDataBeforeUnload = (e) => {
 
 const setUp = () => {
 	window.addEventListener("beforeunload", sendDataBeforeUnload);
+	fetch("/dashboard", {
+		keepalive: true,
+		mode: "cors",
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ action: "update" }),
+	}).catch((err) => console.log(err));
 	[...$$("input")].forEach((input) => {
 		input.addEventListener("input", (e) => {
 			e.target.setAttribute("value", e.target.value);
