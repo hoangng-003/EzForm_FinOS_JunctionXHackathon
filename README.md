@@ -22,7 +22,7 @@ npm i
 
 **Important**:
 
-1. This is our development version. We are using mongoDB in local mode, so you need to install [mongoDB Compass](https://www.mongodb.com/products/compass) first. Or you can use your mongoDB cluster online. After have mongoDB ready, you must add MONGODB_URI to your .env file
+1. This is our development version. We are using mongoDB in local mode, so you need to install [mongoDB Compass](https://www.mongodb.com/products/compass) first. Or you can use your [mongoDB cluster](https://www.mongodb.com/basics/clusters) online. After have mongoDB ready, you must add MONGODB_URI to your .env file
    <br>
 2. We use third party service to authenticate user. It called [Auth0](https://auth0.com/). So that you must create a **Regular Web Application** in Auth0 first and then add the following information to your .env file:
 
