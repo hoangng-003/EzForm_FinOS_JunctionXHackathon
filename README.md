@@ -18,9 +18,23 @@ git clone https://github.com/MrYasuo/form-finOS.git
 npm i
 ```
 
+## Prerequisite
+
+**Important**:
+
+1. This is our development version. We are using mongoDB in local mode, so you need to install [mongoDB Compass](https://www.mongodb.com/products/compass) first. Or you can use your mongoDB cluster online. After have mongoDB ready, you must add MONGODB_URI to your .env file
+   <br>
+2. We use third party service to authenticate user. It called [Auth0](https://auth0.com/). So that you must create a **Regular Web Application** in Auth0 first and then add the following information to your .env file:
+
+- AUTH0_CLIENT_ID
+- AUTH0_CLIENT_SECRET
+- AUTH0_DOMAIN
+- AUTH0_CALLBACK_URL
+  You can find more information in [Auth0 Nodejs Quickstart](https://auth0.com/docs/quickstart/webapp/nodejs).
+
 ## Usage
 
-Run our project in development environment
+When you have Auth0 and MongoDB ready, run our project in development environment
 
 ```bash
 npm run dev
