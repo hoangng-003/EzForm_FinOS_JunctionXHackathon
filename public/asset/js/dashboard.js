@@ -2,6 +2,25 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+(() => {
+	const toggleTemplateGroup = document.querySelector(
+		".dashboard-templates--hide-btn"
+	);
+
+	toggleTemplateGroup.addEventListener("click", () => {
+		toggleTemplate();
+	});
+
+	function toggleTemplate() {
+		document
+			.querySelector(".dashboard-templates--items")
+			.classList.toggle("hide");
+		document
+			.querySelector(".dashboard-templates--items")
+			.classList.toggle("show");
+	}
+})();
+
 $(".dashboard--create-form").addEventListener("click", () => {
 	fetch("/dashboard", {
 		method: "POST",
