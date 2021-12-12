@@ -85,12 +85,27 @@ Dashboard templates begin
     width: 30px;
     height: 30px;
 
+    position: relative;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
 .dashboard-templates .dashboard-templates--hide-btn:hover{
     background-color: var(--text-black-300);
     cursor: pointer;
+}
+.dashboard-templates .dashboard-templates--hide-btn:hover::before{
+    font-size: 12px;
+    content: 'Hide/Show templates';
+    color: var(--bg-black-50);
+
+    display: block;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background-color: var(--text-black-700);
+
+    position: absolute;
+    top: 113%;
+    left: -95px;
 }
 .dashboard-templates .dashboard-templates--hide-btn i {
     font-size: 16px;
@@ -127,6 +142,17 @@ Dashboard templates begin
     margin-top: 20px;
     font-size: 16px;
     color: var(--text-black-600);
+}
+.dashboard-templates .dashboard-templates--items{
+    transition: all 0.3s ease;
+}
+.dashboard-templates .dashboard-templates--items.hide{
+    display: none;
+    transition: fadeOut 0.3s ease-in;
+}
+.dashboard-templates .dashboard-templates--items.show{
+    display: block;
+    transition: fadeIn 0.3s ease-in;
 }
 .dashboard-templates .template-item{
     display: inline-flex;

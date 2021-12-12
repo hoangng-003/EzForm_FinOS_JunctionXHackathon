@@ -46,6 +46,22 @@ const hbs = exphbs.create({
 			<input type="hidden" name="userId" value="${userId}">`;
 			return html;
 		},
+		renderGuessData: function (guessData) {
+			let html = "";
+			guessData.forEach((guess, index) => {
+				html += `<div class="report-item">
+					<div class="report-item-inner outer-shadow">
+						<div class="report-item-img">
+							<img src="/asset/img/dashboard/userForm-img.svg" alt="portfolio image" data-screenshots="/asset/img/dashboard/User-form-img.svg">
+							<span class="view-report">view report</span>
+						</div>
+						<p class="report-item-title">User report #${index}</p>
+					</div>
+					<input type="hidden" name="uuid" value="${guess.userId}">
+				</div>`;
+			});
+			return html;
+		},
 		renderDashboard: function (forms) {
 			let html = "";
 			forms.forEach((form) => {

@@ -798,6 +798,25 @@ const formQuestionBody = $("#form-question--body");
 			.then((data) => (window.location.href = data.redirect))
 			.catch((err) => console.log(err));
 	};
-
 	btnPreview.addEventListener("click", sendData);
 })();
+
+() => {
+	const btnSend = $(".btn-send");
+	const sendOfficialData = () => {
+		const formData = $("form").innerHTML.replaceAll(/[\n\t\s]{2,}/g, "");
+		const formTitle = $("input[name='title-form']").value;
+		fetch(window.location.href, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				title: formTitle,
+				form: formData,
+				action: "send",
+			}),
+		}).catch((err) => console.log(err));
+	};
+	btnSend.addEventListener("click", sendOfficialData);
+};

@@ -1,0 +1,5 @@
+@media (max-width: 900px) {
+    .dashboard-templates .dashboard-templates--container .row:last-child{
+        justify-content: center;
+    }
+}

@@ -50,7 +50,7 @@
 }
 .main-header .logo a{
     font-size: 32px;
-    color: var(--text-black-600);
+    color: var(--text-black-800);
 }
 .main-header .register--btn{
     padding: 8px 16px;
@@ -356,7 +356,7 @@
 }
 /* abt footer */
 .abt-footer{
-    padding-top: 0px;
+    padding: 0 15px;
 }
 .abt-footer .footer-body{
     margin-top: 46px;
@@ -462,6 +462,7 @@
     cursor: pointer;
     color: var(--text-black-800);
     
+    font-size: 16px;
     display: inline-block;
     margin: 24px 0;
     transition: all 0.3s ease;
@@ -635,6 +636,7 @@
 .footer-section .footer-body{
     margin-top: 46px;
     min-height: 200px;
+    padding: 0 15px;
 }
 .footer-section .footer-body .socials-links{
     flex: 0 0 30%;

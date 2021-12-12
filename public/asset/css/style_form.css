@@ -173,17 +173,23 @@
 }
 /* Form-body-navigation begin */
 .form-body .form-body--questions .form-question--nav{
-    position: absolute;
-    right: -50px;
-    top: 20%;
+    position: fixed;
+    right: 22%;
+    top: 40%;
 
     text-align: center;
-    min-height: 40px;
-    width: 40px;
 
     cursor: pointer;
     border-radius: 4px;
     background-color: var(--bg-black-50);
+
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+.form-body .form-body--questions .question-nav-item{
+    width: 40px;
+    height: 40px;
 }
 .form-body .form-body--questions .form-question--nav i{
     line-height: 40px;
@@ -455,6 +461,15 @@
 }
 .form-question--checkbox-group{
     margin: 0;
+}
+.form-question--dropDown-userUI{
+    margin: 6px 0;
+}
+.form-question--creatorDropdown-group{
+    margin: 6px 0;
+}
+.form--dropDown-item{
+    padding: 3px 0;
 }
 .btn--require-radioBox{
     position: absolute;

@@ -1,11 +1,7 @@
 <title>EZ form</title>
 
-<!-- main css -->
-<link rel="stylesheet" href="./asset/css/base.css">
 <link rel="stylesheet" href="./asset/css/style.css">
 <link rel="stylesheet" href="./asset/css/responsive.css">
-<!-- Font-icon -->
-<link rel="stylesheet" href="./asset/css/font-awesome.css">
 <div class="header main-header header-shadow">
 	<div class="header-container">
 		<div class="row justify-content-between align-items-center">
@@ -20,20 +16,20 @@
 
 				<label for="nav-mobile-input" class="nav-overlay"></label>
 				<div class="logo">
-					<a href="index.html">
+					<a href="/">
 						<span>EZ</span>form
 					</a>
 				</div>
 				<div class="navigation nav-mobile row align-items-center">
 					<div class="logo l-0">
-						<a href="index.html">
+						<a href="/">
 							<span>EZ</span>form
 						</a>
 					</div>
-					<a class="nav--item hover-in-shadow" href="#overview">Overview</a>
-					<a class="nav--item hover-in-shadow" href="#features">Features</a>
-					<a class="nav--item hover-in-shadow" href="#templates">Templates</a>
-					<a class="js-about-us nav--item hover-in-shadow" href="#about-us-section">About Us</a>
+					<a class="nav--item hover-in-shadow scroll" id="btn-overview">Overview</a>
+					<a class="nav--item hover-in-shadow scroll" id="btn-features">Features</a>
+					<a class="nav--item hover-in-shadow scroll" id="btn-templates">Templates</a>
+					<a class="js-about-us nav--item hover-in-shadow">About Us</a>
 
 					<div class="register--btn hover-in-shadow l-0 mobile-btn">
 						{{#if user}}
@@ -66,7 +62,7 @@
 <!-- Header end -->
 
 <!-- About Us container begin -->
-<section class="about-us-section section" id="about-us-section">
+<section class="about-us-section section scroll-view" id="about-us-section">
 	<!-- About us header -->
 	<div class="header abt-header header-shadow">
 		<div class="abt-header--container container">
@@ -83,15 +79,17 @@
 					<label for="abt-nav-mobile-input" class="abt-nav-overlay"></label>
 
 					<div class="abt-logo">
-						<span>EZ</span>form
+						<a href="/" style="color: var(--text-black-800)">
+							<span>EZ</span>form
+						</a>
 					</div>
 					<div class="abt-navigation abt-nav-mobile row align-items-center">
 						<div class="abt-logo m-0">
 							<span>EZ</span>form
 						</div>
-						<a class="abt-nav--item hover-in-shadow" href="#abt-info">Overview</a>
-						<a class="abt-nav--item hover-in-shadow" href="#abt-works">Project Info</a>
-						<a class="abt-nav--item hover-in-shadow" href="#abt-teams">Our Team</a>
+						<a class="abt-nav--item hover-in-shadow scroll" id="btn-abt-info">Overview</a>
+						<a class="abt-nav--item hover-in-shadow scroll" id="btn-abt-works">Project Info</a>
+						<a class="abt-nav--item hover-in-shadow scroll" id="btn-abt-teams">Our Team</a>
 					</div>
 				</div>
 				<div class="close-aboutContainer outer-shadow hover-in-shadow" href="">&times;</div>
@@ -99,7 +97,7 @@
 		</div>
 	</div>
 	<!-- About us info -->
-	<div class="abt-info" id="abt-info">
+	<div class="abt-info scroll-view" id="abt-info">
 		<div class="abt-info--container container">
 			<div class="abt-main-info">
 				<h1>We are EZform</h1>
@@ -107,7 +105,7 @@
 					and share online forms and surveys,<br> and analyze
 					responses in real-time.
 				</p>
-				<a class="outer-shadow hover-in-shadow" href="#abt-works"><i class="fas fa-book-reader"></i> Our works</a>
+				<a class="outer-shadow hover-in-shadow scroll" id="btn-abt-works" style="cursor: pointer"><i class="fas fa-book-reader"></i> Our works</a>
 			</div>
 		</div>
 		<div class="abt-vision">
@@ -119,7 +117,7 @@
 						</div>
 						<h2>Audience</h2>
 						<p>At EZform, we use human, brand, and cultural insights to
-							unlock strategic business opportunities for clients.
+							make our products influential in the region.
 						</p>
 					</div>
 					<div class="abt-vision-card">
@@ -127,8 +125,8 @@
 							<i class="fas fa-medal"></i>
 						</div>
 						<h2>Branding</h2>
-						<p>At EZform, we use human, brand, and cultural insights
-							to unlock strategic business opportunities for clients.
+						<p>EzForm asserts itself as outstanding Dynamic Form Web-base
+							system - a great tool for creators
 						</p>
 					</div>
 					<div class="abt-vision-card">
@@ -145,7 +143,7 @@
 		</div>
 	</div>
 	<!-- About us works -->
-	<div class="abt-works" id="abt-works">
+	<div class="abt-works scroll-view" id="abt-works">
 		<div class="abt-works--container container">
 			<div class="row">
 				<div class="abt-work--img">
@@ -155,8 +153,8 @@
 				</div>
 				<div class="abt-work--text">
 					<div class="abt-work--text-inner">
-						<h2>Design with us, Develop Anything</h2>
-						<p>Themesberg is an experienced and passionate group of designers, developers,
+						<h2>Think with us, Develop Anything</h2>
+						<p>EZ form is a product of Zero team, an experienced and passionate group of designers, developers,
 							project managers, writers and artists. Every client we work with becomes
 							a part of the team. Together we face the challenges and celebrate the victories.
 						</p>
@@ -170,7 +168,7 @@
 	</div>
 	<div class="section--endline--inner container"></div>
 	<!-- About us teams -->
-	<div class="abt-teams" id="abt-teams">
+	<div class="abt-teams scroll-view" id="abt-teams">
 		<div class="abt-teams--container container">
 			<div class="row">
 				<div class="section-title">
@@ -185,12 +183,11 @@
 							<img class="outer-shadow" src="./asset/img/team/profile-picture-1.jpg" alt="">
 						</div>
 						<div class="profile-info">
-							<h3>Truong Tan Thanh</h3>
-							<span>UX-UI designer</span>
+							<h3>Phạm Huy Hoàng</h3>
+							<span>Media</span>
 							<div class="team-social-profile">
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-linkedin-in"></i></a>
-								<a href=""><i class="fab fa-github"></i></a>
+								<a href="https://www.facebook.com/phamhoangyynd"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://github.com/Phamhoang16032002"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 					</div>
@@ -202,12 +199,12 @@
 							<img class="outer-shadow" src="./asset/img/team/profile-picture-2.jpg" alt="">
 						</div>
 						<div class="profile-info">
-							<h3>Truong Tan Thanh</h3>
+							<h3>Trương Tấn Thành</h3>
 							<span>UX-UI designer</span>
 							<div class="team-social-profile">
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-linkedin-in"></i></a>
-								<a href=""><i class="fab fa-github"></i></a>
+								<a href="https://www.facebook.com/blackswan.hsgs"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://www.linkedin.com/in/thanhtantruong/"><i class="fab fa-linkedin-in"></i></a>
+								<a href="https://github.com/truongtanthanh1202"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 					</div>
@@ -219,12 +216,11 @@
 							<img class="outer-shadow" src="./asset/img/team/profile-picture-3.jpg" alt="">
 						</div>
 						<div class="profile-info">
-							<h3>Truong Tan Thanh</h3>
-							<span>UX-UI designer</span>
+							<h3>Bùi Đức Hải</h3>
+							<span>Back-end Developer</span>
 							<div class="team-social-profile">
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-linkedin-in"></i></a>
-								<a href=""><i class="fab fa-github"></i></a>
+								<a href="https://www.facebook.com/buihai0706vn/"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://github.com/MrYasuo"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 					</div>
@@ -236,12 +232,12 @@
 							<img class="outer-shadow" src="./asset/img/team/profile-picture-4.jpg" alt="">
 						</div>
 						<div class="profile-info">
-							<h3>Truong Tan Thanh</h3>
-							<span>UX-UI designer</span>
+							<h3>Nguyễn Tiến Hoàng</h3>
+							<span>Front-end Developer</span>
 							<div class="team-social-profile">
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-linkedin-in"></i></a>
-								<a href=""><i class="fab fa-github"></i></a>
+								<a href="https://www.facebook.com/hom.hoang.946/"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://www.linkedin.com/in/tienhoangnguyen/"><i class="fab fa-linkedin-in"></i></a>
+								<a href="https://github.com/hoangng-003"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 					</div>
@@ -253,12 +249,11 @@
 							<img class="outer-shadow" src="./asset/img/team/profile-picture-5.jpg" alt="">
 						</div>
 						<div class="profile-info">
-							<h3>Truong Tan Thanh</h3>
-							<span>UX-UI designer</span>
+							<h3>Võ Tín Dư</h3>
+							<span>Developer Supporter</span>
 							<div class="team-social-profile">
-								<a href=""><i class="fab fa-facebook-f"></i></a>
-								<a href=""><i class="fab fa-linkedin-in"></i></a>
-								<a href=""><i class="fab fa-github"></i></a>
+								<a href="https://www.facebook.com/tindu.vo"><i class="fab fa-facebook-f"></i></a>
+								<a href="https://github.com/t-op2019"><i class="fab fa-github"></i></a>
 							</div>
 						</div>
 					</div>
@@ -308,17 +303,16 @@
 <!-- About Us container end -->
 
 <!-- Overview Section begin -->
-<section class="overview-section section" id="overview">
+<section class="overview-section section scroll-view" id="overview">
 	<div class="overview-section--container container">
 		<div class="row">
 			<div class="overview--text">
 				<h2>Get insights quickly, with EZ Form !</h2>
-				<p>Easily create and share online forms and surveys, and analyze responses in real-time.</p>
-				<a class="onlineForm outer-shadow hover-in-shadow" href="/dashboard">Go to Form</a>
-				{{#if user}}
-				{{else}}
-				<p>Want to use EZ Form? <a href="/signin">Login or Sign up here</a></p>
-				{{/if}}
+				<p>Easily create and share online forms and surveys, and optimize unlimited form-filling speed.</p>
+				<a class="onlineForm outer-shadow hover-in-shadow" href="">Go to Form</a>
+				{{#unless user}}
+				<p>Want to use EZ Form? <a href="/signin">Login or Register here</a></p>
+				{{/unless}}
 				<div class="overview--img">
 					<img src="./asset/img/illustrator/reading-side.svg" alt="">
 				</div>
@@ -335,7 +329,7 @@
 <!-- Overview Section end -->
 
 <!-- Features Section begin -->
-<section class="features-section section" id="features">
+<section class="features-section section scroll-view" id="features">
 	<div class="features-section--container container">
 		<div class="row feature-item">
 			<div class="feature-img feature-1--img">
@@ -346,7 +340,7 @@
 			<div class="feature-text feature-1--text">
 				<div class="feature-text--inner">
 					<h2>Create an online form as easily as creating a document</h2>
-					<p>Select from multiple question types, drag-and-drop to reorder questions, and customize values as easily as pasting a list.</p>
+					<p>Select from multiple question types and customize values as easily as pasting a list.</p>
 				</div>
 			</div>
 		</div>
@@ -358,8 +352,8 @@
 			</div>
 			<div class="feature-text feature-2--text">
 				<div class="feature-text--inner">
-					<h2>Send polished surveys and forms</h2>
-					<p>Customize colors, images, and fonts to adjust the look and feel or reflect your organization’s branding. And add custom logic that shows questions based on answers, for a more seamless experience.</p>
+					<h2>Support saving form filling progress</h2>
+					<p>Users can continue to fill out at anytime whenever they have time and interest.</p>
 				</div>
 			</div>
 		</div>
@@ -371,8 +365,8 @@
 			</div>
 			<div class="feature-text feature-3--text">
 				<div class="feature-text--inner">
-					<h2>Analyze responses with automatic summaries</h2>
-					<p>See charts with response data update in real-time. Or open the raw data with Google Sheets for deeper analysis or automation.</p>
+					<h2>Store report from customers</h2>
+					<p>Monitor customer feedback in the new preview page for deeper analysis & review or automation</p>
 				</div>
 			</div>
 		</div>
@@ -396,7 +390,7 @@
 <!-- Features Section end -->
 
 <!-- Templates Section begin -->
-<section class="templates-section section" id="templates">
+<section class="templates-section section scroll-view" id="templates">
 	<div class="templates-section--container container">
 		<div class="overview-section--container container">
 			<div class="row">

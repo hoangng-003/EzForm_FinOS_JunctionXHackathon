@@ -186,7 +186,7 @@
     /* Features */
 
     .features-section{
-        padding: 0;
+        padding: 0 15px;
     }
 
     .features-section .feature-item .feature-text{

@@ -17,8 +17,19 @@ router.get("/createForm/:slug", secured(), (req, res) => {
 			user.forms.push(newForm.toObject());
 			req.user.forms = user.forms;
 			user.save();
-			res.render("createForm", { currentForm: newForm.toObject() });
-		} else res.render("createForm", { currentForm });
+			res.render("createForm", {
+				currentForm: newForm.toObject(),
+				guessData: [],
+			});
+		} else {
+			let currentGuessData = [];
+			GuessData.find({ formId: formId }).then((guessDatas) => {
+				guessDatas.forEach((guessData) => {
+					currentGuessData.push(guessData.toObject());
+				});
+			});
+			res.render("createForm", { currentForm, guessData: currentGuessData });
+		}
 	});
 });
 
@@ -33,6 +44,15 @@ router.post("/createForm/:slug", (req, res) => {
 					name: req.body.title,
 					id: req.params.slug,
 					form: req.body.form,
+				});
+				Form.findOne({ id: req.params.slug }).then((currentForm) => {
+					if (!currentForm) {
+						newForm.save();
+					} else {
+						currentForm.name = newForm.name;
+						currentForm.form = newForm.form;
+						currentForm.save();
+					}
 				});
 				user.forms[index] = newForm.toObject();
 				req.user.forms = user.forms;
@@ -60,6 +80,22 @@ router.post("/createForm/:slug", (req, res) => {
 				})
 				.catch((err) => console.log(err));
 			break;
+		}
+		case "send": {
+			Form.findOne({ id: req.params.slug }).then((currentForm) => {
+				if (!currentForm) {
+					const newForm = new Form({
+						name: req.body.title,
+						id: req.params.slug,
+						form: req.body.form,
+					});
+					newForm.save();
+				} else {
+					currentForm.name = req.body.title;
+					currentForm.form = req.body.form;
+					currentForm.save();
+				}
+			});
 		}
 	}
 });

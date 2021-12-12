@@ -26,7 +26,7 @@ const btnSend = $(".btn-send");
 	});
 })();
 
-const sendData = () => {
+const getData = () => {
 	const formId = $("input[name='id']");
 	const form = $("form");
 	const formTitle = $("input[name='title-form']");
@@ -35,6 +35,10 @@ const sendData = () => {
 		formId: formId.value,
 		data: form.innerHTML.replaceAll(/[\n\t\s]{2,}/g, ""),
 	};
+	return guessData;
+};
+
+const sendData = (data) => {
 	fetch(window.location.href, {
 		keepalive: true,
 		method: "POST",
@@ -42,21 +46,39 @@ const sendData = () => {
 			"Content-Type": "application/json",
 		},
 		mode: "cors",
-		body: JSON.stringify(guessData),
+		body: JSON.stringify(data),
 	}).catch((err) => console.log(err));
 };
 
-(() => {
-	setInterval(() => {
-		sendData();
-	}, 2000);
-})();
+const sendDataTimer = setInterval(() => {
+	let newData = getData();
+	sendData(newData);
+}, 2000);
 
 const sendDataBeforeUnload = (e) => {
 	e.preventDefault();
-	sendData();
+	let newData = getData();
+	sendData(newData);
 	return true;
 };
 
-btnSend.addEventListener("click", sendData);
+const sendOfficialData = (data, action) => {
+	fetch(window.location.href, {
+		keepalive: true,
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		mode: "cors",
+		body: JSON.stringify({ ...data, action }),
+	}).catch((err) => console.log(err));
+	clearInterval(sendDataTimer);
+	window.removeEventListener("beforeunload", sendDataBeforeUnload);
+};
+
+btnSend.addEventListener("click", () => {
+	let newData = getData();
+	sendOfficialData(newData, "save");
+});
+
 window.addEventListener("beforeunload", sendDataBeforeUnload);
