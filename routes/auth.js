@@ -10,7 +10,7 @@ dotenv.config();
 router.get(
 	"/signin",
 	// redirect to auth0 callbackURL, in this case, it will be http://localhost:3000/callback
-	// 2. passport now will come up with the strategy defined in server.js with scope openid email profile
+	// 2. passport now will come up with the strategy defined in passportcfg.js with scope openid email profile
 	passport.authenticate("auth0", {
 		scope: "openid email profile",
 	})
@@ -48,8 +48,10 @@ router.get("/callback", function (req, res, next) {
 // Perform session logout and redirect to homepage
 router.get("/signout", (req, res) => {
 	req.logout();
-	req.session.destroy();
-	res.redirect("/");
+	req.session.destroy((err) => {
+		res.clearCookie("connect.sid");
+		res.redirect("/");
+	});
 });
 
 module.exports = router;
