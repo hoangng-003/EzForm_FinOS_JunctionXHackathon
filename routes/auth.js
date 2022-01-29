@@ -47,10 +47,15 @@ router.get("/callback", function (req, res, next) {
 
 // Perform session logout and redirect to homepage
 router.get("/signout", (req, res) => {
+	const returnUrl = encodeURIComponent(
+		`${req.protocol}://${req.hostname}:${process.env.PORT || 3000}`
+	);
 	req.logout();
 	req.session.destroy((err) => {
 		res.clearCookie("connect.sid");
-		res.redirect("/");
+		res.redirect(
+			`https://${process.env.AUTH0_DOMAIN}/v2/logout?returnTo=${returnUrl}&client_id=${process.env.AUTH0_CLIENT_ID}`
+		);
 	});
 });
 
