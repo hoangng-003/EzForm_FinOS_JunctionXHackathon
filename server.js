@@ -18,7 +18,7 @@ const {
 } = require("./routes");
 
 // connect mongoDB
-require("./lib/db")();
+// require("./lib/db")();
 
 // configure passport
 // require("./lib/passpoortcfg");
