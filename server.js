@@ -21,7 +21,7 @@ const {
 require("./lib/db")();
 
 // configure passport
-require("./lib/passportcfg");
+// require("./lib/passpoortcfg");
 
 dotenv.config();
 const app = express();
@@ -108,8 +108,8 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(session(sess));
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 app.use(flash());
 
 // every request will have to pass here
