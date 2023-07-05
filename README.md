@@ -3,6 +3,8 @@
 Ez Form is a simple, easy to use, and powerful form builder.\
 Let's get started!
 
+Demo : https://www.youtube.com/watch?v=-YllVvtk7vM
+
 ## Installation
 
 1. Install the [nodejs](https://nodejs.org/en/) package manager [npm](https://nodejs.org/en/)
